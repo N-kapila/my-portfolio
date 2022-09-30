@@ -1,8 +1,17 @@
 import React from "react";
 import Typical from "react-typical";
 import "./Profile.css";
+import ScrollService from "../../../utilities/ScrollService";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 export default function Profile() {
+  const switchScreen = (index, screen) => {
+    let screenComponent = document.getElementById(screen.screen_name);
+    if (!screenComponent) return;
+
+    screenComponent.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="profile-container">
       <div className="profile-parent">
@@ -38,19 +47,9 @@ export default function Profile() {
               <h1>
                 {" "}
                 <Typical
+                  steps={["My name is Nirmal", 5000, "Hello world!", 500]}
                   loop={Infinity}
-                  steps={[
-                    "My name is Tharaka 😀",
-                    1000,
-                    "My name is Nirmal 😇",
-                    1000,
-                    "My name is Kapilarathne 🫣",
-                    1000,
-                    "My name is Bandara 😀",
-                    1000,
-                    "My name is SE 😎",
-                    1000,
-                  ]}
+                  wrapper="p"
                 />
               </h1>
               <span className="profile-role-tagline">
@@ -59,7 +58,17 @@ export default function Profile() {
             </span>
           </div>
           <div className="profile-options">
-            <button className="btn primary-btn"> Hire Me </button>
+            <Link
+              className="btn primary-btn"
+              to="ContactMe"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+            >
+              {" "}
+              Hire Me{" "}
+            </Link>
             <a
               href="Nirmal kapilarathne.pdf"
               download="Nirmal kapilarathne.pdf"
