@@ -43,6 +43,7 @@ export default function Contactme(props) {
         email,
         message,
       };
+      console.log(data);
       setBool(true);
       const res = await axios.post("/contact", data);
       if (name.length === 0 || email.length === 0 || message.length === 0) {
