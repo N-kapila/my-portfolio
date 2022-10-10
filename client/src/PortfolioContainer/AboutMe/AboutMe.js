@@ -15,7 +15,7 @@ export default function AboutMe(props) {
 
   const SCREEN_CONSTSANTS = {
     description:
-      "E&P Data Specialist with Physics and Geophysics background. Have a small business in duck and sheep. An enthusiast for new technology and development. ",
+      "I'm a student which is currently studying Software Engineering degree program at the University of Kelaniya. Currently, I’m focused on front-end development.",
     highlights: {
       bullets: [
         "Building ETL Solutions",

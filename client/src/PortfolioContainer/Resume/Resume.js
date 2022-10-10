@@ -45,25 +45,24 @@ const Resume = (props) => {
     { label: "Education", logoSrc: "education.svg" },
     { label: "Work History", logoSrc: "work-history.svg" },
     { label: "Programming Skills", logoSrc: "programming-skills.svg" },
-    { label: "Application Skills", logoSrc: "programming-skills.svg" },
-    { label: "Projects", logoSrc: "projects.svg" },
+    { label: "Projects", logoSrc: "programming-skills.svg" },
+    { label: "Soft Skills", logoSrc: "projects.svg" },
     { label: "Interests", logoSrc: "interests.svg" },
   ];
 
   const programmingSkillsDetails = [
-    { skill: "Python", ratingPercentage: 85 },
-    { skill: "R Languange", ratingPercentage: 65 },
-    { skill: "php", ratingPercentage: 65 },
-    { skill: "Scikit Learn", ratingPercentage: 80 },
+    { skill: "React", ratingPercentage: 85 },
+    { skill: "Bootstrap", ratingPercentage: 75 },
+    { skill: "PHP", ratingPercentage: 65 },
     { skill: "Node JS", ratingPercentage: 65 },
-    { skill: "Mongo Db", ratingPercentage: 75 },
-    { skill: "SQL Server", ratingPercentage: 90 },
-    { skill: "HTML", ratingPercentage: 60 },
-    { skill: "CSS", ratingPercentage: 65 },
-    { skill: "Django", ratingPercentage: 65 },
-    { skill: "ArcGIS Model Builder", ratingPercentage: 75 },
-    { skill: "Kafka", ratingPercentage: 65 },
-    { skill: "MySQL", ratingPercentage: 75 },
+    { skill: "C Language", ratingPercentage: 75 },
+    { skill: "SQL Server", ratingPercentage: 60 },
+    { skill: "HTML", ratingPercentage: 80 },
+    { skill: "CSS", ratingPercentage: 85 },
+    { skill: "Java Script", ratingPercentage: 55 },
+    { skill: "Kotlin", ratingPercentage: 35 },
+    { skill: "MySQL", ratingPercentage: 55 },
+    { skill: "Java", ratingPercentage: 45 },
   ];
 
   const applicationSkillsDetails = [
@@ -80,52 +79,51 @@ const Resume = (props) => {
 
   const projectsDetails = [
     {
-      title: "Near Real-Time Production DATA REST-API",
-      duration: { fromDate: "April 2021", toDate: "June 2021" },
+      title: "SHOPPING SITE - INDIVIDUAL",
+      duration: { fromDate: "July 2022", toDate: "Present" },
       description:
-        "GET APIs services push to external partner for real-time data communication.",
-      subHeading:
-        "Technologies Used: MongoDB, Node JS, Talend Open Studio, NGINX.",
+        "This is a developing website that can be used as an online shopping site.",
+      subHeading: "Technologies Used: React JS, HTML, CSS",
     },
     {
-      title: "ETL push process for production data",
-      duration: { fromDate: "2019", toDate: "present" },
+      title: "BOOKBERRIS - GROUP",
+      duration: { fromDate: "2021", toDate: "2022" },
       description:
-        "A robust mechanism to push daily production data to external as reporting services.",
-      subHeading: "Technologies Used:  Talend Open Studio, SQL Server.",
+        "BookBerris is a complete website that can be used as an online book store.",
+      subHeading: "Technologies Used:  PHP, HTML, CSS, Java Script, BOOTSTRAP",
     },
     {
-      title: "E&P Data Management Development Project",
-      duration: { fromDate: "2016", toDate: "2019" },
+      title: "LEARNING MANAGEMENT SYSTEM- GROUP",
+      duration: { fromDate: "2021", toDate: "2022" },
       description:
-        "Build data integration and GIS web server to maintain E&P technical data.",
+        "This project has a complete website and mobile application for a learning management system.",
       subHeading:
-        "Technologies Used: Python, GIS Server, ArcGIS Desktop, PPDM Data Model, .Net DNN Platform.",
+        "Technologies Used: React JS, JAVA, HTML, CSS, MYSQL, JAVASCRIPT",
     },
   ];
 
   const resumeDetails = [
     <div className="resume-screen-container" key="education">
       <ResumeHeading
-        heading={"University of Leeds, United Kingdom"}
-        subHeading={"MASTER of Exploration Geophysics"}
-        fromDate={"2014"}
-        toDate={"2015"}
+        heading={"University of Kelaniya, Sri Lanka"}
+        subHeading={"B.Sc.(Hons) Software Engineering"}
+        fromDate={"2020"}
+        toDate={"2024"}
       />
 
       <ResumeHeading
-        heading={"Bandung Institute of Technology, Indonesia"}
-        subHeading={"BACHELOR of Physics"}
-        fromDate={"2008"}
-        toDate={"2013"}
+        heading={"St.Thomas' College, Matale"}
+        subHeading={"Secondary Education "}
+        fromDate={"2009"}
+        toDate={"2017"}
       />
     </div>,
 
     /* WORK EXPERIENCE */
     <div className="resume-screen-container" key="work-experience">
       <div className="experience-container">
-        <ResumeHeading
-          heading={"Saka Energi Indonesia"}
+        {/* <ResumeHeading
+          heading={"Saka Energi "}
           subHeading={"E&P Data Specialist"}
           fromDate={"2019"}
           toDate={"Present"}
@@ -152,7 +150,7 @@ const Resume = (props) => {
             semi-automated services and database.
           </span>
           <br />
-        </div>
+        </div> */}
       </div>
     </div>,
 
@@ -175,26 +173,7 @@ const Resume = (props) => {
       ))}
     </div>,
 
-    /* Application SKILLS */
-    <div
-      className="resume-screen-container application-skills-container"
-      key="application-skills"
-    >
-      {applicationSkillsDetails.map((skill, index) => (
-        <div className="skill-parent" key={index}>
-          <div className="heading-bullet"></div>
-          <span>{skill.skill}</span>
-          <div className="skill-percentage">
-            <div
-              style={{ width: skill.ratingPercentage + "%" }}
-              className="active-percentage-bar"
-            ></div>
-          </div>
-        </div>
-      ))}
-    </div>,
-
-    /* PROJECTS */
+    /* Projects */
     <div className="resume-screen-container" key="projects">
       {projectsDetails.map((projectsDetails, index) => (
         <ResumeHeading
@@ -208,19 +187,28 @@ const Resume = (props) => {
       ))}
     </div>,
 
+    /* Soft Skills */
+    <div className="resume-screen-container" key="interests">
+      <ResumeHeading heading="Time management" />
+      <ResumeHeading heading="Leadership skills" />
+      <ResumeHeading heading="Work Under pressure" />
+      <ResumeHeading heading="Team Working" />
+      <ResumeHeading heading="Positive thinking" />
+    </div>,
+
     /* Interests */
     <div className="resume-screen-container" key="interests">
       <ResumeHeading
         heading="Sports"
-        description="Like to cycling, basketball and swimming."
+        description="Like to Cricket, Foot Ball and swimming."
       />
       <ResumeHeading
-        heading="Hydroponics"
-        description="Build my own hydroponics system and step-by-step understanding the process."
+        heading="Traveling"
+        description="Likes to travel through the natural beauty of the environment."
       />
       <ResumeHeading
         heading="Investment"
-        description="Started to invest in farming area include ducks and sheep also interest in stock market investment"
+        description="Interest in online investment methods and stock market investment"
       />
     </div>,
   ];

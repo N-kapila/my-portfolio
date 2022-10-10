@@ -47,13 +47,20 @@ export default function Profile() {
               <h1>
                 {" "}
                 <Typical
-                  steps={["My name is Nirmal", 5000, "Hello world!", 500]}
                   loop={Infinity}
-                  wrapper="p"
+                  steps={[
+                    "Software Engineer 💻",
+                    1000,
+                    "Front-End Developer 🖥",
+                    1000,
+                    "React/React Native 🌐",
+                    1000,
+                  ]}
                 />
               </h1>
               <span className="profile-role-tagline">
-                Tharaka Nirmal Bandara Kapilarathne. University of Kelaniya.
+                Creating tools that improve site interaction regardless of the
+                browser.
               </span>
             </span>
           </div>
